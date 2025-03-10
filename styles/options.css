@@ -1,0 +1,260 @@
+/*
+.rank-block{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+.rank{
+  width: 90%;
+  height: 40px;
+  padding-left: 20px;
+  border: 1px solid grey;
+  border-radius: 12px;
+  outline: none;
+}
+*/
+
+
+.form{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: grey;
+  padding-bottom: 8px;
+  border-bottom: 1px solid grey;
+}
+
+
+
+/* From Uiverse.io by mrhyddenn */ 
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+
+  padding: 10px 16px;
+  padding-top: 16px;
+  margin-top: 30px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 80%;
+  border: none;
+  border-bottom: 2px solid black;
+  outline: 0;
+  font-size: 17px;
+  color: black;
+  padding: 7px 2px;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: black;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, rgb(0, 18, 51), #38caef);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  margin-bottom: 10px;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: grey;
+  font-weight: 400;
+}
+
+/* reset input */
+
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+/* till here is rank style */
+
+
+
+
+.options-info{
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  padding-top: 30px;
+  color: rgb(0, 18, 51);
+}
+
+
+.gender,.category,.other-category,.district-category,.branch-category{
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 20px;
+}
+.gender-block,.other-block{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  margin-bottom: 20px;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 12px;
+}
+
+/*these 3 styles are just for district and branches*/
+.district-category .other-block{
+  margin-bottom: 2px;
+}
+.district-category .radio-input:checked{
+  border-color: orange;
+}
+.district-category .radio-input:checked::after{
+  background-color: orange;
+}
+
+.branch-category .other-block{
+  margin-bottom: 2px;
+}
+.branch-category .radio-input:checked{
+  border-color: orange;
+}
+.branch-category .radio-input:checked::after{
+  background-color: orange;
+}
+
+
+.gender-text{
+  
+  width: 100%;
+}
+
+.other-block{
+  border: none;
+}
+.other-category{
+  padding-top: 10px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #cedbe8;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.radio-input {
+  height: 1.25rem; /* 5 * 0.25rem */
+  width: 1.4rem; /* 5 * 0.25rem */
+  border: 2px solid #cedbe8;
+  background: transparent;
+  appearance: none;
+  outline: none;
+  position: relative; /* Added for positioning the dot */
+  border-radius: 50%;
+  margin-right: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.radio-input:checked {
+  border-color: rgb(4, 102, 200);
+}
+
+.radio-input:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.625rem; /* Adjust size of the dot */
+  height: 0.625rem; /* Adjust size of the dot */
+  background-color: #0d7cf2; /* Color of the dot */
+  border-radius: 50%;
+  transform: translate(-50%, -50%); /* Center the dot */
+}
+
+.radio-input:focus {
+  outline: none;
+}
+
+/* displayed html */
+
+.select-district,.select-branch{
+  display: flex;
+  height: 40px;
+  padding: 12px 10px;
+}
+.select-district select,
+.select-branch select{
+  width: 80%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 20px;
+  outline: none;
+}
+
+
+/* ^ */
+
+.select-state,.select-college{
+  padding: 12px 16px;
+  display: flex;
+  height: 40px;
+}
+.select-state select,
+.select-college select{
+  width: 80%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: none;
+}
+
+
+.predict-button{
+  padding: 30px 20px;
+  padding-top: 20px;
+}
+.predict-button button{
+  width: 100%;
+  height: 40px;
+  border: none;
+  background-color: rgb(80, 80, 231);
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.predict-button button:hover{
+  opacity: 0.8;
+}
