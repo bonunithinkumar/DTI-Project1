@@ -653,6 +653,43 @@
                 margin-top: 30px;
             }
         }
+
+        .cutoff-button {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cutoff-button button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: rgb(0, 89, 255);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 89, 255, 0.2);
+        }
+
+        .cutoff-button button:hover {
+            background: rgb(0, 70, 200);
+            transform: translateX(2px);
+            box-shadow: 0 4px 8px rgba(0, 89, 255, 0.3);
+        }
+
+        .cutoff-button button i {
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .cutoff-button button:hover i {
+            transform: translateX(3px);
+        }
     </style>
 </head>
 <body>
@@ -664,7 +701,6 @@
             <div class="title">college predict</div>
         </div>
         <div class="right">
-            <a href="start-login.html" class="login-link">Login / Signup</a>
             <img id="profile-img" src="logos/person_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg">
         </div>
     </div>
@@ -690,6 +726,12 @@
             <div class="college-info">
                 <h2>About the College</h2>
                 <div id="collegeInfo"></div>
+            </div>
+            <div class="cutoff-button">
+                <button onclick="window.location.href='college-cutoff.html?college=' + collegeName">
+                    View Cutoff
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
         </div>
 
@@ -755,6 +797,17 @@
             <p>&copy; 2024 College Predict. All rights reserved.</p>
         </div>
     </footer>
+
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-popup-content">
+            <h3>Select Profile Picture</h3>
+            <div class="profile-images">
+                <img src="logos/3fc3wd5xwf171.webp" class="profile-image-option" alt="Profile 1">
+                <img src="logos/5aSvbgj-QPWqg7OUISCVvw.webp" class="profile-image-option" alt="Profile 2">
+                <img src="logos/person_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" class="profile-image-option" alt="Profile 3">
+            </div>
+        </div>
+    </div>
 
     <script>
         // Get college name from URL parameters
@@ -914,9 +967,59 @@
         document.addEventListener("DOMContentLoaded", function () {
             const savedImage = localStorage.getItem("profileImage");
             const profileImg = document.getElementById("profile-img");
+            const profilePopup = document.getElementById("profilePopup");
+            let popupTimeout;
+
             if (savedImage) {
                 profileImg.src = savedImage;
             }
+
+            // Show popup when clicking profile image
+            profileImg.addEventListener("click", function() {
+                profilePopup.style.display = "flex";
+                if (popupTimeout) {
+                    clearTimeout(popupTimeout);
+                }
+            });
+
+            // Handle profile image selection
+            const profileOptions = document.querySelectorAll(".profile-image-option");
+            profileOptions.forEach(option => {
+                option.addEventListener("click", function() {
+                    // Remove selected class from all options
+                    profileOptions.forEach(opt => opt.classList.remove("selected"));
+                    // Add selected class to clicked option
+                    this.classList.add("selected");
+                    // Update profile image
+                    profileImg.src = this.src;
+                    // Save to localStorage
+                    localStorage.setItem("profileImage", this.src);
+                    // Hide popup
+                    profilePopup.style.display = "none";
+                });
+            });
+
+            // Close popup when clicking outside
+            profilePopup.addEventListener("click", function(e) {
+                if (e.target === profilePopup) {
+                    profilePopup.style.display = "none";
+                }
+            });
+
+            // Auto-hide popup after 3 seconds if no image is selected
+            profilePopup.addEventListener("mouseenter", function() {
+                if (popupTimeout) {
+                    clearTimeout(popupTimeout);
+                }
+            });
+
+            profilePopup.addEventListener("mouseleave", function() {
+                popupTimeout = setTimeout(() => {
+                    if (!document.querySelector(".profile-image-option.selected")) {
+                        profilePopup.style.display = "none";
+                    }
+                }, 3000);
+            });
         });
     </script>
 </body>
