@@ -1,0 +1,38 @@
+body{
+  margin: 0;
+  height: 0;
+  font-family: 'Roboto',arial;
+  background-image: url('logos/logo_light.png') ;
+}
+
+p{
+  font-family: 'Roboto';
+}
+
+.body1{
+  display: flex;
+  justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  transition: padding 0.35s ease-out;
+  
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 960px;
+  /*
+  background-color: rgb(151, 157, 172);
+  */
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 9px;
+}
+h2{
+  text-align: center;
+}
+
+
+
