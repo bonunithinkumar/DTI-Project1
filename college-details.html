@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>College Details</title>
     
-    <link rel="stylesheet" href="styles/general.css">
-    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/shared/header.css">
+    <link rel="stylesheet" href="styles/shared/footer.css">
+    <link rel="stylesheet" href="styles/cutoff.css">
+    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +39,7 @@
             width: 95%;
             max-width: 1400px;
             margin: 40px auto;
-            gap: 30px;
+            gap: 20px;
             padding: 0;
             flex-direction: row;
             box-sizing: border-box;
@@ -56,7 +61,7 @@
         .sidebar {
             width: 350px;
             background: linear-gradient(145deg, #ffffff, #f8fbff);
-            border-radius: 12px;
+            border-radius: 0px;
             box-shadow: 0 4px 12px rgba(33, 150, 243, 0.1);
             padding: 20px;
             height: 110%;
@@ -70,7 +75,7 @@
 
         .sidebar-title {
             font-size: 1.5em;
-            color: #1976D2;
+            color: black;
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #E3F2FD;
@@ -204,7 +209,7 @@
         }
 
         .college-info h2 {
-            color: #1976D2;
+            color: #01101e;
             margin-bottom: 15px;
         }
 
@@ -244,12 +249,15 @@
                 flex-direction: row;
                 width: 95%;
                 min-height: calc(100vh - 100px);
+                gap: 20px;
+                align-items: flex-start;
+                justify-content: space-between;
             }
             .sidebar {
                 width: 350px;
                 height: calc(100vh - 100px);
                 position: sticky;
-                top: 20px;
+                top: 0px;
             }
             .college-image {
                 height: 400px;
@@ -308,7 +316,7 @@
             }
             .main-container {
                 flex-direction: column;
-                width: 92%;
+                width: 100%;/* 92 */
                 margin: 20px auto;
                 gap: 20px;
             }
@@ -348,7 +356,7 @@
                 font-size: 0.85em;
             }
             .sidebar-title {
-                font-size: 1.2em;
+                font-size: 1.1em;
                 margin-bottom: 15px;
             }
             .college-card {
@@ -385,311 +393,7 @@
             }
         }
 
-        /* Footer Styles */
-        .footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 30px 0 10px;
-            margin-top: 30px;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            min-height: fit-content;
-            height: auto;
-            max-width: 100vw;
-            box-sizing: border-box;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #ffffff, transparent);
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-            height: auto;
-            box-sizing: border-box;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .footer-section:hover {
-            transform: translateY(-5px);
-        }
-
-        .footer-title {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            color: #ffffff;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 8px;
-            position: relative;
-        }
-
-        .footer-title::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: #ffffff;
-            transition: width 0.3s ease;
-        }
-
-        .footer-section:hover .footer-title::after {
-            width: 100%;
-        }
-
-        .team-members {
-            list-style: none;
-            padding: 0;
-        }
-
-        .team-member {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-        }
-
-        .team-member:hover {
-            opacity: 1;
-        }
-
-        .member-role {
-            font-size: 0.85em;
-            color: #cccccc;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-icon {
-            color: white;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            width: 35px;
-            height: 35px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-icon::before {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            transition: transform 0.3s ease;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-3px);
-            color: #1a1a1a;
-        }
-
-        .social-icon:hover::before {
-            transform: translateY(-100%);
-        }
-
-        .social-icon i {
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85em;
-            color: #cccccc;
-        }
-
-        @media (max-width: 768px) {
-            .footer {
-                padding: 25px 0 20px;
-                margin-top: 20px;
-                height: auto;
-                min-height: fit-content;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 25px;
-                padding: 0 15px;
-                height: auto;
-            }
-
-            .footer-section {
-                min-width: 100%;
-                margin-bottom: 20px;
-                padding: 0;
-                height: auto;
-            }
-
-            .footer-title {
-                font-size: 1.1em;
-                margin-bottom: 15px;
-                padding-bottom: 8px;
-            }
-
-            .footer-section p {
-                font-size: 0.9em;
-                line-height: 1.5;
-                margin-bottom: 12px;
-                max-width: 100%;
-            }
-
-            .team-members {
-                margin-top: 10px;
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .team-member {
-                margin-bottom: 0;
-                padding: 5px 0;
-            }
-
-            .social-icons {
-                flex-wrap: wrap;
-                gap: 15px;
-                margin-top: 15px;
-                justify-content: flex-start;
-                padding: 5px 0;
-            }
-
-            .social-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 16px;
-            }
-
-            .footer-bottom {
-                margin-top: 25px;
-                padding-top: 15px;
-                font-size: 0.85em;
-            }
-        }
-
-        /* Tablet View Specific Styles */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .footer {
-                padding: 30px 0 25px;
-                height: auto;
-                min-height: fit-content;
-            }
-
-            .footer-content {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-                padding: 0 25px;
-                height: auto;
-            }
-
-            .footer-section {
-                min-width: 0;
-                margin-bottom: 20px;
-                height: auto;
-            }
-
-            .footer-section:last-child {
-                grid-column: 1 / -1;
-                text-align: center;
-                margin-bottom: 0;
-            }
-
-            .team-members {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .social-icons {
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-
-            .footer-bottom {
-                margin-top: 30px;
-            }
-        }
-
-        .cutoff-button {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cutoff-button button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            background: rgb(0, 89, 255);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 89, 255, 0.2);
-        }
-
-        .cutoff-button button:hover {
-            background: rgb(0, 70, 200);
-            transform: translateX(2px);
-            box-shadow: 0 4px 8px rgba(0, 89, 255, 0.3);
-        }
-
-        .cutoff-button button i {
-            font-size: 14px;
-            transition: transform 0.3s ease;
-        }
-
-        .cutoff-button button:hover i {
-            transform: translateX(3px);
-        }
+        
     </style>
 </head>
 <body>
@@ -809,106 +513,11 @@
         </div>
     </div>
 
+    <script src="scripts/profile.js"></script>
+    <script src="data-js/college-info.js"></script>
+
     <script>
-        // Get college name from URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const collegeName = urlParams.get('college');
-
-        // College data object with AI-generated image URLs
-        const collegeData = {
-            'vignan': {
-                name: 'Vignan Institute of Information Technology',
-                image: 'colleges-img/vignan.jpg',
-                rating: '4.2/5',
-                location: 'Visakhapatnam, Andhra Pradesh',
-                info: `Vignan Institute of Information Technology (VIIT) is a premier engineering college established in 2002. 
-                      It is located in Visakhapatnam, Andhra Pradesh. The college offers various undergraduate and postgraduate 
-                      programs in engineering and technology. Key highlights include:
-                      <br><br>
-                      • NAAC 'A' Grade Accreditation<br>
-                      • NBA Accredited Programs<br>
-                      • State-of-the-art laboratories and infrastructure<br>
-                      • Strong industry connections and placement record<br>
-                      • Research-oriented faculty members<br>
-                      • Modern library facilities with digital resources`
-            },
-            'anits': {
-                name: 'Anil Neerukonda Institute of Technology & Sciences',
-                image: 'colleges-img/anits.jpg',
-                rating: '4.5/5',
-                location: 'Visakhapatnam, Andhra Pradesh',
-                info: `ANITS is one of the premier engineering colleges in Andhra Pradesh. Established in 2001, 
-                      the institute offers various undergraduate and postgraduate programs. Notable features include:
-                      <br><br>
-                      • NAAC 'A+' Grade Accreditation<br>
-                      • Excellent placement record<br>
-                      • Modern research facilities<br>
-                      • Industry collaboration programs<br>
-                      • Advanced computing labs<br>
-                      • Skilled faculty members`
-            },
-            'gvp': {
-                name: 'Gayatri Vidya Parishad College of Engineering',
-                image: 'colleges-img/gvp.jpg',
-                rating: '4.3/5',
-                location: 'Visakhapatnam, Andhra Pradesh',
-                info: `GVP is known for its excellence in engineering education since 1996. The college 
-                      provides quality technical education with strong emphasis on practical learning. Features include:
-                      <br><br>
-                      • NAAC 'A' Grade Accreditation<br>
-                      • Strong industry connections<br>
-                      • Modern infrastructure<br>
-                      • Experienced faculty<br>
-                      • Active placement cell<br>
-                      • Research facilities`
-            },
-            'raghu': {
-                name: 'Raghu Engineering College',
-                image: 'colleges-img/raghu.jpg',
-                rating: '4.0/5',
-                location: 'Visakhapatnam, Andhra Pradesh',
-                info: `Raghu Engineering College is committed to academic excellence and innovation. 
-                      The college focuses on holistic development of students through various programs and activities.
-                      <br><br>
-                      • NBA Accredited Programs<br>
-                      • Modern Infrastructure<br>
-                      • Industry-Academia Partnership<br>
-                      • Active Research Programs<br>
-                      • Sports Facilities<br>
-                      • Training and Placement Cell`
-            },
-            'mvgr': {
-                name: 'MVGR College of Engineering',
-                image: 'colleges-img/mvgr.jpg',
-                rating: '4.1/5',
-                location: 'Vizianagaram, Andhra Pradesh',
-                info: `MVGR College of Engineering is known for its quality education and research facilities. 
-                      The college has state-of-the-art infrastructure and experienced faculty members.
-                      <br><br>
-                      • NAAC 'A' Grade<br>
-                      • Advanced Research Labs<br>
-                      • Industry Collaborations<br>
-                      • Strong Alumni Network<br>
-                      • Digital Library<br>
-                      • Excellent Placement Record`
-            },
-            'gitam': {
-                name: 'GITAM University',
-                image: 'colleges-img/gitam.jpg',
-                rating: '4.6/5',
-                location: 'Visakhapatnam, Andhra Pradesh',
-                info: `GITAM is a renowned university offering various undergraduate and postgraduate programs. 
-                      Known for its excellent academic standards and research facilities.
-                      <br><br>
-                      • NAAC 'A++' Grade<br>
-                      • International Collaborations<br>
-                      • Research Centers<br>
-                      • Modern Infrastructure<br>
-                      • Industry Interface<br>
-                      • Global Recognition`
-            }
-        };
-
+       
         // Update page content based on college name
         if (collegeName && collegeData[collegeName.toLowerCase()]) {
             const college = collegeData[collegeName.toLowerCase()];
@@ -963,64 +572,6 @@
             scrollContainer.style.animation = null;
         });
 
-        // Profile image handling
-        document.addEventListener("DOMContentLoaded", function () {
-            const savedImage = localStorage.getItem("profileImage");
-            const profileImg = document.getElementById("profile-img");
-            const profilePopup = document.getElementById("profilePopup");
-            let popupTimeout;
-
-            if (savedImage) {
-                profileImg.src = savedImage;
-            }
-
-            // Show popup when clicking profile image
-            profileImg.addEventListener("click", function() {
-                profilePopup.style.display = "flex";
-                if (popupTimeout) {
-                    clearTimeout(popupTimeout);
-                }
-            });
-
-            // Handle profile image selection
-            const profileOptions = document.querySelectorAll(".profile-image-option");
-            profileOptions.forEach(option => {
-                option.addEventListener("click", function() {
-                    // Remove selected class from all options
-                    profileOptions.forEach(opt => opt.classList.remove("selected"));
-                    // Add selected class to clicked option
-                    this.classList.add("selected");
-                    // Update profile image
-                    profileImg.src = this.src;
-                    // Save to localStorage
-                    localStorage.setItem("profileImage", this.src);
-                    // Hide popup
-                    profilePopup.style.display = "none";
-                });
-            });
-
-            // Close popup when clicking outside
-            profilePopup.addEventListener("click", function(e) {
-                if (e.target === profilePopup) {
-                    profilePopup.style.display = "none";
-                }
-            });
-
-            // Auto-hide popup after 3 seconds if no image is selected
-            profilePopup.addEventListener("mouseenter", function() {
-                if (popupTimeout) {
-                    clearTimeout(popupTimeout);
-                }
-            });
-
-            profilePopup.addEventListener("mouseleave", function() {
-                popupTimeout = setTimeout(() => {
-                    if (!document.querySelector(".profile-image-option.selected")) {
-                        profilePopup.style.display = "none";
-                    }
-                }, 3000);
-            });
-        });
     </script>
 </body>
 </html> 
