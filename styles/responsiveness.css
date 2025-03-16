@@ -55,3 +55,91 @@
   
 }
 
+/* Mobile View (below 768px) */
+@media (max-width: 767px) {
+  body {
+      background-color: #f0f5ff;
+  }
+  .main-container {
+      flex-direction: column;
+      width: 95%;
+      margin: 20px auto;
+      gap: 20px;
+  }
+  .info {
+      width: 100%;
+      padding: 15px;
+  }
+  .top-container {
+      padding: 15px;
+  }
+  .search-block {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px;
+  }
+  .search-input {
+      width: 100%;
+      padding: 12px 15px;
+  }
+  .search-button button {
+      width: 100%;
+      padding: 12px;
+  }
+  .form {
+      padding: 15px;
+      font-size: 1.2em;
+  }
+  .form__group {
+      margin-bottom: 15px;
+  }
+  .form__field {
+      width: 100%;
+      padding: 12px 15px;
+  }
+  .gender, .category, .district-category, .other-category, .branch-category {
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+  }
+  .gender-block, .other-block {
+      flex: 1 1 calc(50% - 10px);
+      min-width: 120px;
+  }
+  .select-state {
+      width: 100%;
+      margin: 15px 0;
+  }
+  .select-state select {
+      width: 100%;
+      padding: 12px 15px;
+  }
+  .predict-button {
+      padding: 15px;
+  }
+  .predict-button button {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1em;
+  }
+  #result {
+      padding: 15px;
+      margin: 15px;
+  }
+  #result table {
+      width: 100%;
+      font-size: 0.9em;
+  }
+  .footer-content {
+      flex-direction: column;
+      padding: 20px;
+  }
+  .footer-section {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  .social-icons {
+      justify-content: center;
+  }
+}
+
