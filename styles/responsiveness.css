@@ -55,3 +55,13 @@
   
 }
 
+/* Mobile View (below 768px) */
+@media (max-width: 767px) {
+ .left{
+    margin-left: -10px;
+ }
+ #profile-img{
+    width: 35px;
+    height: 35px;
+ }
+}
